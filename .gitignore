@@ -14,3 +14,8 @@ local.properties
 *.aab
 /app/build/
 /app/release/
+
+# Private documentation
+Requirements*.docx
+Requirements*.png
+Requirements*.pdf
