@@ -1,0 +1,22 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp" app:cardCornerRadius="12dp" app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:orientation="vertical" android:padding="12dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvMeta"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Dr. Mehta • 16 Oct, 10:55 AM"
+            android:textColor="@color/textLight" android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvText"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Take Rx 5mg daily"
+            android:textColor="@color/textDark" android:textSize="15sp"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

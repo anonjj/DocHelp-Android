@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- top → bottom fade -->
+    <gradient
+        android:type="linear"
+        android:angle="270"
+        android:startColor="#00FF3C3C"
+        android:endColor= "#1AFF3C3C" />  <!-- very light red -->
+    <corners android:radius="0dp"/>
+</shape>

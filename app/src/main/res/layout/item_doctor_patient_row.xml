@@ -1,0 +1,29 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_margin="6dp" app:cardCornerRadius="12dp" app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:text="Asha Patel"
+            android:textStyle="bold" android:textSize="16sp"
+            android:textColor="@color/textDark"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvLast"
+            android:text="Last: Thu, 16 Oct • 10:30 AM (Confirmed)"
+            android:textColor="@color/textLight"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvTags"
+            android:text="Tags: cardio, bp"
+            android:textColor="@color/textLight"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

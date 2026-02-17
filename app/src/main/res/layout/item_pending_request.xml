@@ -1,0 +1,88 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardUseCompatPadding="true">
+
+    <!--
+      RelativeLayout container replaced with ConstraintLayout.
+      The padding is kept on this container.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!--
+          Constrained to the top-start of the parent.
+          Its width is set to 0dp (match_constraint) to fill the available space
+          up to the start of the buttons (btnAccept).
+          This prevents text from overlapping the buttons.
+        -->
+        <TextView
+            android:id="@+id/tvPatient"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Asha Patel • 10:30 AM"
+            android:textColor="@color/textDark"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnAccept"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <!--
+          Constrained below tvPatient.
+          Also constrained horizontally between the parent-start and btnAccept.
+        -->
+        <TextView
+            android:id="@+id/tvReason"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Reason: General visit"
+            android:textColor="@color/textLight"
+            app:layout_constraintEnd_toStartOf="@+id/btnAccept"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPatient"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <!--
+          This is the right-most button, so it's constrained to the
+          top-end of the parent.
+        -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDecline"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Decline"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/textLight"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--
+          This button is constrained to the start of btnDecline,
+          creating the horizontal arrangement.
+          The marginEnd provides the spacing.
+        -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:text="Accept"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/dochelpRed"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnDecline"
+            app:layout_constraintTop_toTopOf="@+id/btnDecline" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

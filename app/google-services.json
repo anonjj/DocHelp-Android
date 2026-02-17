@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "480748750981",
+    "project_id": "dochelp-e1e7e",
+    "storage_bucket": "dochelp-e1e7e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480748750981:android:07da6a15de77f508ec41ec",
+        "android_client_info": {
+          "package_name": "com.example.dochelp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzZtPvNW7seo5xYM3tc6V2YNRm04ACukE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

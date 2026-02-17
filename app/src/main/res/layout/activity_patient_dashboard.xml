@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                
+                <ImageView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_med_plus"
+                    app:tint="@color/colorPrimary"/>
+                
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="DocHelp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textDark"/>
+
+                <ImageButton
+                    android:id="@+id/btnNotifications"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_notifications"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/textMedium"/>
+                
+                <ImageButton
+                    android:id="@+id/btnMenu"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_menu_24"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/textMedium"/>
+            </LinearLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Welcome / Profile Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPatientProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/cardBorder"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imgProfile"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/ic_person"
+                            android:background="@color/blueLight"
+                            android:padding="12dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hello, Patient"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/textDark"/>
+
+                            <TextView
+                                android:id="@+id/tvPatientId"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ID: --"
+                                android:textSize="14sp"
+                                android:textColor="@color/textSecondary"/>
+                        </LinearLayout>
+                        
+                        <ImageButton
+                            android:id="@+id/btnEditProfile"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_edit"
+                            android:background="@drawable/circle_white"
+                            android:backgroundTint="@color/backgroundLight"
+                            app:tint="@color/colorPrimary"/>
+                    </LinearLayout>
+                    
+                    <!-- Expanded Details (Collapsible in future, visible for now) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp"
+                        android:baselineAligned="false">
+                        
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView 
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Blood" 
+                                android:textSize="12sp" 
+                                android:textColor="@color/textSecondary"/>
+                            <TextView 
+                                android:id="@+id/tvBloodGroup" 
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--" 
+                                android:textSize="16sp" 
+                                android:textStyle="bold" 
+                                android:textColor="@color/textDark"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView 
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Height" 
+                                android:textSize="12sp" 
+                                android:textColor="@color/textSecondary"/>
+                            <TextView 
+                                android:id="@+id/tvHeight" 
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--" 
+                                android:textSize="16sp" 
+                                android:textStyle="bold" 
+                                android:textColor="@color/textDark"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView 
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Weight" 
+                                android:textSize="12sp" 
+                                android:textColor="@color/textSecondary"/>
+                            <TextView 
+                                android:id="@+id/tvWeight" 
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--" 
+                                android:textSize="16sp" 
+                                android:textStyle="bold" 
+                                android:textColor="@color/textDark"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    
+                    <!-- Hidden fields required by code but not primary UI -->
+                     <TextView android:id="@+id/tvAge" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp"/>
+                     <TextView android:id="@+id/tvGender" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp"/>
+                     <TextView android:id="@+id/tvPhone" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp"/>
+                     <TextView android:id="@+id/tvEmail" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp"/>
+                     <TextView android:id="@+id/tvEmergencyContact" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp"/>
+                     <TextView android:id="@+id/tvBMI" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Quick Actions Grid -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quick Actions"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/textDark"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:spacing="12dp">
+
+                <!-- Upload Docs -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnUpload"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/blueLight">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_upload_24" app:tint="@color/primaryBlue"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Upload Docs" android:layout_marginTop="8dp" android:textColor="@color/primaryBlue" android:textStyle="bold"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Book Doctor -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnViewAllDoctors"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/greenLight">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_doctor" app:tint="@color/primaryGreen"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Find Doctor" android:layout_marginTop="8dp" android:textColor="@color/primaryGreen" android:textStyle="bold"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Appointments Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp">
+                
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Upcoming"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textDark"/>
+                
+                <TextView
+                    android:id="@+id/tvAppointmentCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:background="@drawable/badge_bg"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvUpcoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+            <TextView
+                android:id="@+id/tvEmptyUpcoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="No upcoming appointments"
+                android:textColor="@color/textSecondary"
+                android:visibility="gone" />
+
+            <!-- Recent Docs Horizontal List -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recent Documents"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/textDark"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"/>
+                
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDocs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:clipToPadding="false"/>
+
+            <TextView
+                android:id="@+id/tvEmptyDocs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="No documents found"
+                android:textColor="@color/textSecondary"
+                android:visibility="gone" />
+                
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabQuickAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:text="SOS"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_warning"
+        app:iconTint="@color/white"
+        app:backgroundTint="@color/dochelpRed"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
